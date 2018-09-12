@@ -23,6 +23,10 @@
     <form action="/tamagotchis/time" method="post">
       <button type="submit">Pass time</button>
     </form>
+    <form action="/tamagotchis/clear" method="post">
+      <button type="submit">Empty graveyard.</button>
+    </form>
+
     <ul>
     @foreach (Tamagotchis.Models.Tamagotchi tama in Model)
     {

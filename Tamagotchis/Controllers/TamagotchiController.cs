@@ -63,5 +63,13 @@ namespace Tamagotchis.Controllers
       }
       return View("../Home/Index", allTamagotchis);
     }
+
+    [HttpPost("/tamagotchis/clear")]
+    public ActionResult ClearAll()
+    {
+      Tamagotchi.ClearAll();
+      List <Tamagotchi> allTamagotchis = Tamagotchi.GetAll();
+      return View("../Home/Index", allTamagotchis);
+    }
   }
 }

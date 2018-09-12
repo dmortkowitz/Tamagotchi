@@ -83,6 +83,11 @@ namespace Tamagotchis.Models
       return _instances;
     }
 
+    public static void ClearAll()
+    {
+      _instances.Clear();
+    }
+
     public bool GetLife()
     {
       if (this.GetSleep() == 0 || this.GetFood() == 0 || this.GetHappiness() == 0)
