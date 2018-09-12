@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>Welcome to your Tamagotchi</h1>
+
+    <ul>
+      @foreach (Tamagotchis.Models.Tamagotchi tama in Model)
+      {
+        @if (@tama.GetLife() == true)
+        {
+          <li>
+            <img src='~/img/TamagotchAlive.png'>
+            <a href="/tamagotchis/@tama.GetId()">@tama.GetName() Sleep: @tama.GetSleep() Food: @tama.GetFood() Happiness: @tama.GetHappiness()</a>
+          </li>
+        }
+      }
+    </ul>
+
+    <a href="/tamagotchis/new">Add a new Tamagotchi!</a>
+
+    <form action="/tamagotchis/time" method="post">
+      <button type="submit">Pass time</button>
+    </form>
+    <ul>
+    @foreach (Tamagotchis.Models.Tamagotchi tama in Model)
+    {
+      @if (@tama.GetLife() == false)
+      {
+          <li>
+            <img src='~/img/TamagotchDead.png'>
+            @tama.GetName() is dead.
+          </li>
+      }
+    }
+    </ul>
+  </body>
+</html>

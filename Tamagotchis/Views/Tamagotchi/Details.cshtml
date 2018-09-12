@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <link href="~/css/styles.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+    <h1>Name: @Model.GetName()</h1>
+    <ul>
+      <li> Food: @Model.GetFood()</li>
+      <li> Sleep: @Model.GetSleep()</li>
+      <li> Happiness: @Model.GetHappiness()</li>
+    </ul>
+
+    <form action="/tamagotchis/food/@Model.GetId()" method="post">
+    <button type="submit">Feed</button>
+    </form>
+
+    <form action="/tamagotchis/sleep/@Model.GetId()" method="post">
+    <button type="submit">Nap</button>
+    </form>
+
+    <form action="/tamagotchis/happiness/@Model.GetId()" method="post">
+    <button type="submit">Love</button>
+    </form>
+
+    <a href="/">Return to main page.</a>
+
+  </body>
+</html>
